@@ -33,8 +33,10 @@
             @if(Session::get('id')>0)
             <div class="collapse navbar-collapse" id="navbar-collapse-target">
                 <ul class="nav navbar-nav">
-                    <li><a href="getListeFrais" data-toggle="collapse" data-target=".navbar-collapse.in">Lister</a></li>
-                    <li><a href="ajouterFrais" data-toggle="collapse" data-target=".navbar-collapse.in">Ajouter</a></li>
+                    <li><a href="" data-toggle="collapse" data-target=".navbar-collapse.in">Acceuil</a></li>
+                    <li><a href="getListeFrais" data-toggle="collapse" data-target=".navbar-collapse.in">Recherche medicament</a></li>
+                    <li><a href="ajouterFrais" data-toggle="collapse" data-target=".navbar-collapse.in">Recherche d'un rapport</a></li>
+
 
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
