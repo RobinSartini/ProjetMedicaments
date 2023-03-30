@@ -1,7 +1,8 @@
+@extends('layouts.master')
+@section('content')
 
-    @if($erreur !="")
-<div class="alert-danger" role="alert">
-    <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>{{$erreur}}
-</div>
-    @endif
 
+    <div class="alert-danger" role="alert">
+        <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+        <p> l'erreur est : {{$monErreur}}</p>
+    </div>

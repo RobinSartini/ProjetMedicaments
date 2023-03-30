@@ -2,7 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\VisiteurController;
-use App\Http\Controllers\FraisController;
+
+use App\Http\Controllers\RapportController;
+use App\Http\Controllers\MedicamentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,16 +27,26 @@ Route::post('/login', [VisiteurController::class, 'signIn']);
 
 Route::get('/getLogout', [VisiteurController::class, 'signOut']);
 
-Route::get('/getListeFrais', [FraisController::class, 'getFraisVisiteur']);
+Route::get('/RapportMedicament', [RapportController::class,'RapportMedicament']);
 
-Route::get('/modifierListeFrais/{id}', [FraisController::class, 'updateFrais']);
+Route::get('/listeMedicament', [MedicamentController::class,'listeMedicament']);
 
-Route::post('/validerFrais',
-array( 'uses'=> 'App\Http\Controllers\FraisController@validateFrais',
-    'as'=>'validateFrais'
-)
+Route::post('postRapport', [RapportController::class, 'postAjouterRapport']);
+Route::get('/ajoutRapport', function(){
+    return view('vues/formRapportAjouter');
+});
+
+Route::get('/listerRapport', [RapportController::class,'listerRapport']);
+
+Route::get('/modifierRapport/{id}', [RapportController::class, 'modifierRapport']);
+
+Route::post('postmodifierRapport',[RapportController::class, 'postmodifierRapport']);
+
+Route::get('/rechercherRapport', [RapportController::class,'rechercherRapport']);
+
+Route::post('/unRapport',     array(
+        'uses'=> 'App\Http\Controllers\RapportController@afficherUnRapport',
+        'as'=> 'unRapport',
+    )
+
 );
-
-Route::get('/ajouterFrais' , [FraisController::class, 'addFrais']);
-
-Route::get('/supprimerFrais/{id}' , [FraisController::class, 'supprimeFrais']);

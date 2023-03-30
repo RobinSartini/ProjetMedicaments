@@ -20,7 +20,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar+ bvn"></span>
                 </button>
-                <a class="navbar-brand" href=">GSB Frais</a>
+                <a class="navbar-brand" href="{{ url('/') }}">Gestion des Médicaments offerts</a>
             </div>
             @if(Session::get('id')==0)
             <div class="collapse navbar-collapse" id="navbar-collapse-target">
@@ -33,9 +33,13 @@
             @if(Session::get('id')>0)
             <div class="collapse navbar-collapse" id="navbar-collapse-target">
                 <ul class="nav navbar-nav">
-                    <li><a href="" data-toggle="collapse" data-target=".navbar-collapse.in">Acceuil</a></li>
-                    <li><a href="getListeFrais" data-toggle="collapse" data-target=".navbar-collapse.in">Recherche medicament</a></li>
-                    <li><a href="ajouterFrais" data-toggle="collapse" data-target=".navbar-collapse.in">Recherche d'un rapport</a></li>
+                    <li><a href="{{"listerRapport"}}" data-toggle="collapse" data-target=".navbar-collapse.in">Liste des rapports</a></li>
+                    <li><a href="{{"listeMedicament"}}" data-toggle="collapse" data-target=".navbar-collapse.in">Liste des médicaments</a></li>
+                    <li><a href="{{"rechercherRapport"}}" data-toggle="collapse" data-target=".navbar-collapse.in">Recherche d'un Rapports</a></li>
+                    <li><a href="{{"ajoutRapport"}}" data-toggle="collapse" data-target=".navbar-collapse.in">Ajout d'un rapport</a></li>
+                    <li><a href="{{"RapportMedicament"}}" data-toggle="collapse" data-target=".navbar-collapse.in">Recherche d'un médicament</a></li>
+
+
 
 
                 </ul>
